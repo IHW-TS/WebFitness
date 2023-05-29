@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import FitnessForm from './components/FitnessForm';
 import FitnessChart from './components/FitnessChart';
+import ExerciseList from './components/ExerciseList';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends React.Component {
         <h1>Fitness App</h1>
         <FitnessForm onSubmit={this.handleFormSubmit} />
         <FitnessChart data={this.state.data} />
+        <ExerciseList />
       </div>
     );
   }

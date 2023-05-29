@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 10px 0;
+}
