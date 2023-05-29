@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import FitnessForm from './components/FitnessForm';
+import FitnessChart from './components/FitnessChart';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {data: []};
+
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  handleFormSubmit(formData) {
+    this.setState({
+      data: [...this.state.data, formData]
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Fitness App</h1>
+        <FitnessForm onSubmit={this.handleFormSubmit} />
+        <FitnessChart data={this.state.data} />
+      </div>
+    );
+  }
 }
 
 export default App;
